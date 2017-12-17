@@ -1,10 +1,56 @@
 AllCops:
-  RunRailsCops: true
+  TargetRubyVersion: 2.4
   Include:
     - '**/Gemfile'
     - '**/Rakefile'
+    - '**/config.ru'
   Exclude:
-   - 'bin/*'
-   - 'db/seeds.rb'
-   - 'db/schema.rb'
-   - 'vendor/bundle/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'public/**/*'
+    - 'script/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+Rails:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  ForceEqualSignAlignment: true
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/ParameterLists:
+  Max: 10
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/BlockLength:
+  Enabled: false

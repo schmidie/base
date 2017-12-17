@@ -1,16 +1,21 @@
 doctype html
 html
   head
-    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
-    title
-      = content_for?(:title) ? yield(:title) : 'Base'
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Base'}"
-    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
-    == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
-    == csrf_meta_tags
+    meta{ content='text/html; charset=UTF-8' http-equiv='Content-Type' }
+      meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+      / TODO
+      link[href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet"]
+      title
+        = content_for?(:title) ? yield(:title) : 'Base'
+      = csrf_meta_tags
+
+      = stylesheet_link_tag 'application', media: 'all'
+      = javascript_include_tag 'application'
+      /- if current_user.try(:system_group_admin?)
+        = javascript_include_tag 'admin'
+
   body
-    header
-      == render 'layouts/navigation'
+    = render 'layouts/navigation'
     main[role="main"]
-      == render 'layouts/messages'
-      == yield
+      = render 'layouts/messages'
+      = yield

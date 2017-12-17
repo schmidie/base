@@ -1,8 +1,5 @@
-// import the CSS framework
-// Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
-@import "bootstrap";
+/* Fixed navbar */
 
-// make all images responsive by default
 img {
   @extend .img-fluid;
   margin: 0 auto;
@@ -56,7 +53,7 @@ section {
   @extend .card;
   @extend .col-md-9;
   padding-bottom: 40px;
-  @extend .bg-faded;
+  @extend .bg-light;
   @extend .small;
 }
 .authform .right {
